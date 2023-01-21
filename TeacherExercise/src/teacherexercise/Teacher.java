@@ -32,9 +32,27 @@ public abstract class Teacher {
         co.setOfficerComplement(350);
         co.generatePayRoll();
         System.out.println("Chámome " + co.getName() + " e o meu salario é de " + co.salary);
-        System.out.println("---");
+        co.teach();
+        System.out.println("");
         Interim i = new Interim();
+        i.setName("Carla");
+        i.setSurname("Pacheco");
+        i.setAddress("Ponteareas, calle 2");
+        i.setBaseSalary(1400);
+        i.setInterimComplement(600);
+        i.generatePayRoll();
+        System.out.println("Chámome " + i.getName() + " e o meu salario é de " + i.salary);
+        i.teach();
+        System.out.println("");
         Substitute su = new Substitute();
+        su.setName("Yani");
+        su.setSurname("Lopez");
+        su.setAddress("Vigo, plaza menor");
+        su.setBaseSalary(890);
+        su.setDisplacement(220);
+        su.generatePayRoll();
+        System.out.println("Chámome " + su.getName() + " e o meu salario é de " + su.salary);
+        su.teach();
 
     }
 
