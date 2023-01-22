@@ -46,45 +46,6 @@ public abstract class Teacher {
     protected abstract void generatePayRoll();
 
     /**
-     * This is the main method
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
-        CareerOfficer co = new CareerOfficer();
-        co.setName("Paco");
-        co.setSurname("Fernandez");
-        co.setAddress("As neves, calle 4");
-        co.setBaseSalary(1350);
-        co.setOfficerComplement(350);
-        co.generatePayRoll();
-        System.out.println("Chámome " + co.getName() + " e o meu salario é de " + co.salary);
-        co.teach();
-        System.out.println("");
-        Interim i = new Interim();
-        i.setName("Carla");
-        i.setSurname("Pacheco");
-        i.setAddress("Ponteareas, calle 2");
-        i.setBaseSalary(1400);
-        i.setInterimComplement(600);
-        i.generatePayRoll();
-        System.out.println("Chámome " + i.getName() + " e o meu salario é de " + i.salary);
-        i.teach();
-        System.out.println("");
-        Substitute su = new Substitute();
-        su.setName("Yani");
-        su.setSurname("Lopez");
-        su.setAddress("Vigo, plaza menor");
-        su.setBaseSalary(890);
-        su.setDisplacement(220);
-        su.generatePayRoll();
-        System.out.println("Chámome " + su.getName() + " e o meu salario é de " + su.salary);
-        su.teach();
-
-    }
-
-    /**
      * This method returns de name
      *
      * @return name
@@ -172,6 +133,22 @@ public abstract class Teacher {
      */
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    /**
+     * This is the constructor from the abstract class, which can be used by the
+     * subclasses to extend their attributtes already having these one
+     *
+     * @param name The name of the teacher
+     * @param surname The surname of the teacher
+     * @param address The address of the teacher
+     * @param baseSalary The base salary payment of the teacher
+     */
+    public Teacher(String name, String surname, String address, double baseSalary) {
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.baseSalary = baseSalary;
     }
 
 }

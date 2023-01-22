@@ -78,4 +78,22 @@ public class Substitute extends Teacher {
         this.initDate = initDate;
     }
 
+    /**
+     * This is the constructor from the Substitute subclass, we have the
+     * constructor abstract class plus the other attributes that we asign in
+     * this sub class
+     *
+     * @param displacement The payment of the displacement for the teacher
+     * @param initDate The date which he was starting the classes
+     * @param name The teacher's name
+     * @param surname The teacher's surname
+     * @param address The teacher's address
+     * @param baseSalary The teacher's base salary
+     */
+    public Substitute(double displacement, Date initDate, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.displacement = displacement;
+        this.initDate = initDate;
+    }
+
 }

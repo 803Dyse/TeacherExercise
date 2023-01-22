@@ -66,4 +66,22 @@ public class Interim extends Teacher {
         this.destination = destination;
     }
 
+    /**
+     * This is the constructor from the Interim subclass, we have the
+     * constructor abstract class plus the other attributes that we asign in
+     * this sub class for the interim teacher.
+     *
+     * @param interimComplement Salary supplement received by the teacher
+     * @param destination The destination's address
+     * @param name The teacher's name
+     * @param surname The teacher's surname
+     * @param address The teacher's address
+     * @param baseSalary The teacher's base salary
+     */
+    public Interim(double interimComplement, String destination, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.interimComplement = interimComplement;
+        this.destination = destination;
+    }
+
 }
