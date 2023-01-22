@@ -91,6 +91,21 @@ public class CareerOfficer extends Teacher {
         this.oppositionPlace = oppositionPlace;
     }
 
+    /**
+     * This is the constructor from the CareerOfficer subclass, we have the
+     * constructor abstract class plus the other attributes that we asign in
+     * this sub class for the career officer teacher.
+     *
+     * @param officerComplement Salary supplement received by the teacher
+     * @param oppositionYear The year in which he completed the competitive
+     * examinations
+     * @param oppositionPlace place where the teacher completed the competitive
+     * examinations
+     * @param name The teacher's name
+     * @param surname The teacher's surname
+     * @param address The teacher's address
+     * @param baseSalary The teacher's base salary
+     */
     public CareerOfficer(double officerComplement, int oppositionYear, String oppositionPlace, String name, String surname, String address, double baseSalary) {
         super(name, surname, address, baseSalary);
         this.officerComplement = officerComplement;

@@ -4,9 +4,6 @@
  */
 package teacherexercise;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 /**
  *
  * @author Bilo Alejandro Martins Gonzalez
@@ -47,19 +44,6 @@ public abstract class Teacher {
      * This method generate the pay roll from every teacher
      */
     protected abstract void generatePayRoll();
-
-    /**
-     * This is the main method
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
-        CareerOfficer co = new CareerOfficer(350, 2001, "As neves", "Fernando", "Fernandez", "Vigo, calle 3", 1500);
-        Interim i = new Interim(250, "Vigo", "Carla", "PAcheco", "Granada", 1600);
-        GregorianCalendar gc = new GregorianCalendar(2001, 06, 04);
-        Substitute su = new Substitute(500, gc.getTime(), "Jack", "Lantern", "Vigo2", 1500);
-    }
 
     /**
      * This method returns de name
@@ -151,6 +135,15 @@ public abstract class Teacher {
         this.salary = salary;
     }
 
+    /**
+     * This is the constructor from the abstract class, which can be used by the
+     * subclasses to extend their attributtes already having these one
+     *
+     * @param name The name of the teacher
+     * @param surname The surname of the teacher
+     * @param address The address of the teacher
+     * @param baseSalary The base salary payment of the teacher
+     */
     public Teacher(String name, String surname, String address, double baseSalary) {
         this.name = name;
         this.surname = surname;
