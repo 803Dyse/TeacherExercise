@@ -78,4 +78,10 @@ public class Substitute extends Teacher {
         this.initDate = initDate;
     }
 
+    public Substitute(double displacement, Date initDate, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.displacement = displacement;
+        this.initDate = initDate;
+    }
+
 }

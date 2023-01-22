@@ -91,4 +91,11 @@ public class CareerOfficer extends Teacher {
         this.oppositionPlace = oppositionPlace;
     }
 
+    public CareerOfficer(double officerComplement, int oppositionYear, String oppositionPlace, String name, String surname, String address, double baseSalary) {
+        super(name, surname, address, baseSalary);
+        this.officerComplement = officerComplement;
+        this.oppositionYear = oppositionYear;
+        this.oppositionPlace = oppositionPlace;
+    }
+
 }

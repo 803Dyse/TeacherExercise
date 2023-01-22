@@ -4,6 +4,9 @@
  */
 package teacherexercise;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author Bilo Alejandro Martins Gonzalez
@@ -52,36 +55,10 @@ public abstract class Teacher {
      */
     public static void main(String[] args) {
 
-        CareerOfficer co = new CareerOfficer();
-        co.setName("Paco");
-        co.setSurname("Fernandez");
-        co.setAddress("As neves, calle 4");
-        co.setBaseSalary(1350);
-        co.setOfficerComplement(350);
-        co.generatePayRoll();
-        System.out.println("Chámome " + co.getName() + " e o meu salario é de " + co.salary);
-        co.teach();
-        System.out.println("");
-        Interim i = new Interim();
-        i.setName("Carla");
-        i.setSurname("Pacheco");
-        i.setAddress("Ponteareas, calle 2");
-        i.setBaseSalary(1400);
-        i.setInterimComplement(600);
-        i.generatePayRoll();
-        System.out.println("Chámome " + i.getName() + " e o meu salario é de " + i.salary);
-        i.teach();
-        System.out.println("");
-        Substitute su = new Substitute();
-        su.setName("Yani");
-        su.setSurname("Lopez");
-        su.setAddress("Vigo, plaza menor");
-        su.setBaseSalary(890);
-        su.setDisplacement(220);
-        su.generatePayRoll();
-        System.out.println("Chámome " + su.getName() + " e o meu salario é de " + su.salary);
-        su.teach();
-
+        CareerOfficer co = new CareerOfficer(350, 2001, "As neves", "Fernando", "Fernandez", "Vigo, calle 3", 1500);
+        Interim i = new Interim(250, "Vigo", "Carla", "PAcheco", "Granada", 1600);
+        GregorianCalendar gc = new GregorianCalendar(2001, 06, 04);
+        Substitute su = new Substitute(500, gc.getTime(), "Jack", "Lantern", "Vigo2", 1500);
     }
 
     /**
@@ -172,6 +149,13 @@ public abstract class Teacher {
      */
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    public Teacher(String name, String surname, String address, double baseSalary) {
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.baseSalary = baseSalary;
     }
 
 }
