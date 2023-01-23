@@ -34,31 +34,31 @@ public class HighSchool {
      * This method calculate the most paid teacher and return the value
      */
     private Teacher mostPaid() {
-        double biggestSalary = 0;
-        int count = 0;
-        for (int i = 0; i < teacherList.size(); i++) {
-            if (biggestSalary < teacherList.get(i).getSalary()) {
-                biggestSalary = teacherList.get(i).getSalary();
-                count = i;
+        double biggestSalary = Double.MIN_VALUE;
+        Teacher mostPaidTeacher = null;
+        for (Teacher teacher : teacherList) {
+            if (biggestSalary > teacher.getSalary()) {
+                biggestSalary = teacher.getSalary();
+                mostPaidTeacher = teacher;
             }
         }
-        return teacherList.get(count);
+        return mostPaidTeacher;
     }
 
     /**
-     * This method calculates the least paid professor
+     * This method calculates the least paid teacher and return the value
      *
      */
     private Teacher leastPaid() {
-        double lowestSalary = 0;
-        int count = 0;
-        for (int i = 0; i < teacherList.size(); i++) {
-            if (lowestSalary > teacherList.get(i).getSalary()) {
-                lowestSalary = teacherList.get(i).getSalary();
-                count = i;
+        double lowestSalary = Double.MIN_VALUE;
+        Teacher leastPaidTeacher = null;
+        for (Teacher teacher : teacherList) {
+            if (teacher.getSalary() <= lowestSalary) {
+                lowestSalary = teacher.getSalary();
+                leastPaidTeacher = teacher;
             }
         }
-        return teacherList.get(count);
+        return leastPaidTeacher;
     }
 
     /**
@@ -67,11 +67,11 @@ public class HighSchool {
      *
      */
     private double salaryCosts() {
-        double total = 0;
-        for (int i = 0; i < teacherList.size(); i++) {
-            total = teacherList.get(i).getSalary() + total;
+        double totalSalary = 0;
+        for (Teacher teacher : teacherList) {
+            totalSalary += teacher.getSalary();
         }
-        return total;
+        return totalSalary;
     }
 
     /**
@@ -92,33 +92,16 @@ public class HighSchool {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        CareerOfficer co = new CareerOfficer(250, 2001, "As neves", "Fernando", "Fernandez", "Vigo, calle 3", 1500);
-        co.generatePayRoll();
-        System.out.println("Chámome " + co.name + " e meu salario é de " + co.salary);
-        co.teach();
-        System.out.println("");
-        Interim i = new Interim(250, "Vigo", "Carla", "Pacheco", "Granada", 1600);
-        i.generatePayRoll();
-        System.out.println("Chámome " + i.getName() + " e o meu salario é de " + i.salary);
-        i.teach();
-        System.out.println("");
-        //We create a gregorian calendar to make a better format to the date
-        GregorianCalendar gc = new GregorianCalendar(2001, 06, 04);
-        Substitute su = new Substitute(500, gc.getTime(), "Jack", "Lantern", "Vigo2", 1500);
-        su.generatePayRoll();
-        System.out.println("Chámome " + su.name + " e meu salario é de " + su.salary);
-        su.teach();
-
+        GregorianCalendar ca = new GregorianCalendar(1998, 3, 8);
         HighSchool a = new HighSchool("Pazo da merce");
-        a.teacherList.add(co);
-        a.teacherList.add(i);
-        a.teacherList.add(su);
-        System.out.println("");
+        a.teacherList.add(new CareerOfficer(350, 2001, "Vigo", "Paco", "Lopez", "Madrid", 1500));
+        a.teacherList.add(new Interim(500, "Neves", "Jorge", "Pino", "Gilpueblo", 780));
+        a.teacherList.add(new Substitute(700, ca.getTime(), "Leticia", "Curi", "Barcelona", 1200));
         System.out.println("El profesor que tiene mayor salario es " + a.mostPaid().getName());
         System.out.println("El profesor que tiene menor salario es " + a.leastPaid().getName());
         System.out.println("El total del salario de los profesores es de:" + a.salaryCosts());
         System.out.println("La media de salario de los profesores es de: " + a.salaryAverage());
+        System.out.println(a.salaryCosts());
     }
 
 }
